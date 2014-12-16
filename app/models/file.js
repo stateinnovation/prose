@@ -196,6 +196,10 @@ module.exports = Backbone.Model.extend({
     // Set sha if modifying existing file
     if (!this.isNew()) data.sha = this.get('sha');
 
+    // Set author info from admin interface
+    if (AUTHOR) data.author = AUTHOR;
+    if (COMMITTER) data.committer = COMMITTER;
+
     return data;
   },
 
